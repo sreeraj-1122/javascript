@@ -1,0 +1,39 @@
+<!-- 2. Write a JavaScript program to find the most frequent item of an array. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        var arr = [3, 2, 4, 9, 3];
+        var maxFrequency = 1;
+        var m = 0;  //counting
+        var item;
+
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = i; j < arr.length; j++) {
+                if (arr[i] == arr[j])
+                    m++;
+                if (maxFrequency < m) {
+                    maxFrequency = m;
+                    item = arr[i];
+                }
+            }
+
+            m = 0;
+        }
+
+        console.log(`Most frequent item is ${item} and ${maxFrequency} times`);
+        alert(`Most frequent item is ${item} and ${maxFrequency} times`)
+
+    </script>
+</body>
+
+</html>

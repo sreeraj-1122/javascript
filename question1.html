@@ -1,0 +1,47 @@
+<!-- 1. Write a JavaScript function to get an array and to read the first element of an array. 
+Check whether it is prime or not.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = [89, 3, 5, 7, 8, 90, 22]
+        console.log(`Array=${array}`);
+        function firstElementPrime(array) {
+            if (array.length === 0) {
+                console.log("Array is empty");
+                return false
+            }
+            let firstElement = array[0]
+            function checkPrime(number) {
+                if (number <= 1) {
+                    console.log(`${firstElement} is not a prime number`);
+                    return false
+                }
+                for (let i = 2; i <= Math.sqrt(number); i++) {
+                    if (number % i === 0) {
+                       
+                        console.log(`${firstElement} is not a prime number`);
+                        return false
+                    }
+
+                }
+              
+                console.log(`${firstElement} is a prime number`);
+                return true
+            }
+            return checkPrime(firstElement)
+        }
+        let primenumber=firstElementPrime(array)
+        console.log(primenumber);
+    </script>
+</body>
+
+</html>

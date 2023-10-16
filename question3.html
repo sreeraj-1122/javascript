@@ -1,0 +1,40 @@
+<!-- Write a JavaScript program which accept a string as input and swap the case of 
+each character. For example if you input 'The Quick Brown Fox' the output should 
+be 'tHE qUICK bROWN fOX'. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter the String" id="input" style="width: 250px; height: 20px; padding: 10px; font-size: 13px;" required>
+    <button  id="btn" onclick="Display()" style="padding: 11px 18px; background-color: rgb(7, 7, 90); color: white;">Submit</button>
+    <h5 id="output"></h5>
+
+    <script>
+        function Display() {
+            let inputValue = document.getElementById("input").value;
+            let result="";
+            console.log(inputValue);
+            for (let i = 0; i < inputValue.length; i++) {
+                const letter = inputValue[i];
+                if (letter.toUpperCase()===letter) {   //current letter uppercase convert to lowercase
+                    result+=letter.toLowerCase();
+                }
+                else{
+                    result+=letter.toUpperCase();
+                }
+            }
+            document.getElementById("output").innerHTML=result
+        }
+
+    </script>
+</body>
+
+</html>

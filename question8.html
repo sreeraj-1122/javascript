@@ -1,0 +1,54 @@
+<!-- Write a JavaScript program using for…in to read the objects from an array entered 
+by an user and to arrange it in alphabetical order -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   
+    <h3 id="demo"></h3>
+    <h3 id="demo1"></h3>
+    <script>
+
+        function readObjects() {
+            let objects = [];
+
+            
+            let numObjects = parseInt(prompt("Enter the number of objects:")); // Read the number of objects
+
+            // Read the objects
+            for (let i = 0; i < numObjects; i++) {
+                let object = prompt("Enter object " + (i + 1) + ":");
+                objects.push(object);
+            }
+
+            return objects;
+            document.getElementById("demo").innerHTML=objects
+        }
+
+        // Function to arrange the objects in alphabetical order
+        function objectSort(objects) {
+            return objects.sort();
+        }
+
+        // Read the objects from an array entered by an user
+        let objects = readObjects();
+
+        // Arrange the objects in alphabetical order
+        let sortedObjects = objectSort(objects);
+
+        // Display the sorted objects
+        document.getElementById("demo").innerHTML=`Sorted objects: ${sortedObjects}`
+
+        // console.log("Sorted objects:", sortedObjects);
+
+    </script>
+</body>
+
+</html>
